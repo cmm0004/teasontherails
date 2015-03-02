@@ -144,7 +144,7 @@ margin-top: 15px;
         border-bottom: 1px solid rgba(255,255,255,.3);
     }
     .navbar-header{
-        padding: 5px;
+        padding: 10px;
     }
 }
 
@@ -316,14 +316,7 @@ color: #b5121b;
 }
 .about-section{
 	width: 100%;
-   
-    color: #fff;
-    
-    background-color: #b5121b;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    padding: 200px 0;
 }
 .download-section {
     width: 100%;
@@ -339,7 +332,7 @@ color: #b5121b;
 
 .our-tea-section {
     width: 100%;
-    padding: 100px 0;
+    padding: 200px 0;
     color: #fff;
     background: asset_url("thankyou-bg-2.jpg") no-repeat center center scroll;
     background-color: #000;
