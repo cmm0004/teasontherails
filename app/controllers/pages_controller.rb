@@ -13,4 +13,20 @@ class PagesController < ApplicationController
 
   def privacypolicy
   end
+  
+  def ourTea
+  end
+  
+  def terms
+  end
+  
+  def contact
+  end
+  
+  def about
+  end
+  
+  def subscribe
+  end
+  
 end
