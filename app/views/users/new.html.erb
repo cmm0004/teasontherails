@@ -1,2 +1,64 @@
- <% provide(:title, "New User") %>
-<%= render 'layouts/User/temp' %>
+<% provide(:title, 'Sign up') %>
+<section id="ourTea" class="text-center content-section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-offset-1">
+                <h1>Sign up</h1>
+                <p class="lead">Why should you join? Simple, all these reasons here:</p>
+                <ul>
+                    <li>Reason1</li>
+                    <li>Reason2</li>
+                </ul>
+                <p>And thats why you should join</p>
+            </div>
+  <div class="col-md-6 col-md-offset-1">
+    <%= form_for(@user) do |f| %>
+    
+        <%= render 'shared/error_messages' %>
+        
+        <span class="input input--kuro">
+        <%= f.text_field :name, class:"input__field input__field--kuro form_control" %>
+      
+        <%= f.label(:name, class:"input__label input__label--kuro") do %>
+            <%= '<span class="input__label-content input__label-content--kuro">Username</span>'.html_safe %>
+        <% end %>
+        </span>
+        
+        <span class="input input--kuro">
+        <%= f.email_field :email, class:"input__field input__field--kuro form_control" %>
+      
+        <%= f.label(:email, class:"input__label input__label--kuro") do %>
+            <%= '<span class="input__label-content input__label-content--kuro">Email</span>'.html_safe %>
+        <% end %>
+        </span>
+        
+        <span class="input input--kuro">
+        <%= f.password_field :password, class:"input__field input__field--kuro form_control" %>
+      
+        <%= f.label(:password, class:"input__label input__label--kuro") do %>
+            <%= '<span class="input__label-content input__label-content--kuro">Password</span>'.html_safe %>
+        <% end %>
+        </span>
+        
+        <span class="input input--kuro">
+        <%= f.password_field :password_confirmation, class:"input__field input__field--kuro form_control" %>
+      
+        <%= f.label(:password_confirmation, class:"input__label input__label--kuro") do %>
+            <%= '<span class="input__label-content input__label-content--kuro">Confirm Password</span>'.html_safe %>
+        <% end %>
+        </span>
+         <span class="input input--kuro">
+      <%= f.submit "Create my Account", class: "btn btn-danger btn-block" %>
+      </span>
+    <% end %>
+  </div> 
+  </div> 
+  </div>
+
+  </div>
+
+
+  </div>
+
+  </section>
