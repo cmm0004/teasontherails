@@ -135,3 +135,4 @@ var myOptions = {
 };
 
 var map = new google.maps.Map(document.getElementById('map'), myOptions);
+

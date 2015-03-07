@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 <head>
   <title><%= yield(:title) %> | Teas on the Loose</title>
   <%= stylesheet_link_tag 'application', media: 'all',
@@ -24,14 +24,52 @@
 
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+
 <%= render 'layouts/nav' %>
-  
+<%= render 'shared/flash' %>
 
 <%= yield %>
 
 <%= render 'layouts/footer' %>
+<%= debug(params) if Rails.env.development? %>
+
 
     <!-- Core JavaScript Files -->
+    <script>
+      (function() {
+        // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+        if (!String.prototype.trim) {
+          (function() {
+            // Make sure we trim BOM and NBSP
+            var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+            String.prototype.trim = function() {
+              return this.replace(rtrim, '');
+            };
+          })();
+        }
+        [].slice.call(document.querySelectorAll('input.input__field')).forEach(function(inputEl) {
+          // in case the input is already filled..
+          if (inputEl.value.trim() !== '') {
+            window.classie.add(inputEl.parentNode, 'input--filled');
+          }
+          // events:
+          inputEl.addEventListener('focus', onInputFocus);
+          inputEl.addEventListener('blur', onInputBlur);
+        });
+
+        function onInputFocus(ev) {
+          window.classie.add(ev.target.parentNode, 'input--filled');
+        }
+
+        function onInputBlur(ev) {
+          if (ev.target.value.trim() === '') {
+            window.classie.remove(ev.target.parentNode, 'input--filled');
+          }
+        }
+      })();
+    </script>
+    
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
     <!--<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
     <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>-->
