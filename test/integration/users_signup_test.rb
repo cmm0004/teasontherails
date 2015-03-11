@@ -25,7 +25,11 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     }
     end
   assert_template 'users/show'
-  assert_template 'shared/_flash'
+  assert_not flash.empty?
+  get root_path
+  assert flash.empty?
+  assert is_fixed_user_logged_in?
+  
  
   end
   

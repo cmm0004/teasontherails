@@ -69,7 +69,9 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
   
-  
+  test "authenticated? should return false for a nil arguement" do
+    @user.authenticated?('')
+  end
 
   
 
