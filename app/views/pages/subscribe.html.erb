@@ -1,49 +1,63 @@
  <% provide(:title, "Subscribe") %>
   <section class="text-center">
-     <a href="#subscribe"></a>
-        <div id="download" class="download-section">
-            <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Join Teas on the Loose Subscription</h2>
-                 </div>
-                 </div>
-                  <div class="row">
-                  <div class="col-lg-4 col-lg-offset-2">
-                   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="C38YY2RF224UL">
-<input type="submit" value="Join for 6 Months" class="buy btn btn-default btn-lg subscribe extra-margin">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-</div>
-<div class="col-lg-4">
-
-                   
-                   
-                   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="B9H93NFYA7DWG">
-<input type="submit" value="Join for 12 Months" class="buy btn btn-default btn-lg subscribe extra-margin">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-         </div> 
-                
-          </div>
-                
-                
-               <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                <!-- PayPal Logo --><p><img style="margin-left: auto; margin-right: auto;" class="img-responsive" src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" border="0" alt="Secured by PayPal"><!-- PayPal Logo -->
-               </p>
-                <p>Join our 6 or 12 month subscription, and receive 2oz each of two different teas every month, enough for 40 cups of tea. Let our quality full-leaf teas give you a relaxing cafe experience in your home.
-                All payments processed by PayPal.</p>
-                 <p>One-time flat price, no shipping, no monthly fees, just new teas to your door:</p>
-                <h3>6 Months - $300</h3>
-                <h3>12 Months - $500</h3>
-                
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+   <a href="#subscribe"></a>
+   <div id="download" class="download-section">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+       <h2>Join Teas on the Loose Subscription</h2>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-lg-4 col-lg-offset-2">
+ 
+       <% if logged_in? %>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+         <input type="hidden" name="cmd" value="_s-xclick">
+         <input type="hidden" name="hosted_button_id" value="C38YY2RF224UL">
+         <input type="submit" value="Join for 6 Months" class="buy btn btn-default btn-lg subscribe extra-margin">
+         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+      </div>
+      <div class="col-lg-4">
+ 
+ 
+ 
+       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="B9H93NFYA7DWG">
+        <input type="submit" value="Join for 12 Months" class="buy btn btn-default btn-lg subscribe extra-margin">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+       </form>
+      </div>
+ 
+     </div>
+ <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+      
+      
+      
+      <% else %>
+      </div>
+     <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+     
+ 
+       
+        <!-- show what a non-logged in user would see -->
+        <% end %>
+     <!-- show what either would see -->
+         <p>Join our 6 or 12 month subscription, and receive 2oz each of two different teas every month, enough for 40 cups of tea. Let our quality full-leaf teas give you a relaxing cafe experience in your home. All payments processed by PayPal.</p>
+         <p>One-time flat price, no shipping, no monthly fees, just new teas to your door:</p>
+           <!-- PayPal Logo -->
+       <p><img style="margin-left: auto; margin-right: auto;" class="img-responsive" src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_secured_by_pp_2line.png" border="0" alt="Secured by PayPal">
+        <!-- PayPal Logo -->
+       </p>
+         <h3>6 Months - $300</h3>
+         <h3>12 Months - $500</h3>
+ 
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
