@@ -1,0 +1,20 @@
+<% provide(:title, 'Edit Account Info') %>
+
+<section id="ourTea" class="text-center content-section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-offset-1">
+                <h2>Change Login Information</h2>
+                <p class='lead'>Change is good, use the form to change your account login information.</p>
+                <div class="gravatar_edit">
+              <%= gravatar_for @user %>
+              <p class='small'>We use gravatars for profile image, a global avatar associated with your email address, 
+              <a href="http://gravatar.com/emails" target=_blank>learn more about gravatars.</a></p>
+            </div>
+            </div>
+                
+  <div class="col-md-6 col-md-offset-1">
+    <%= render 'shared/user_form' %>
+  </div>
+</div>

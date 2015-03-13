@@ -28,6 +28,18 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    if !logged_in?
+      redirect_to root_path
+    end
+    
+    if logged_in? && !get_current_user.nil?
+      @user = get_current_user
+    elsif logged_in?
+      @user = User.find(params[:id]) 
+    end
+  end
+  
   private
 
     def user_params

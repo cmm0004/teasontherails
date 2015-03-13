@@ -1,4 +1,24 @@
 <% provide(:title, "Home") %>
-<%= render 'layouts/home/intro' %>
-<section id="packaging" class="container packaging content-section text-center"></section>
+    <% provide(:sectionclass, "intro") %>
+        <% provide(:divclass, "intro-body") %>
+            <%= render 'layouts/opening_section' %>
+                <h1 class="brand-heading">Teas on the Loose</h1>
+                <p class="intro-text">Steep-up your routine with two new premium full-leaf teas, delivered to you, every month.</p>
+                <div class="page-scroll">
+                    <div class="row">
+                        <div class="col-lg-4 col-lg-offset-2">
+                            <%= link_to "Learn More", about_path, class: "btn btn-light" %>
+                        </div>
+                        <div class="col-lg-4">
+                            <%= link_to "Sign Up", signup_path, class: "btn btn-light" %>
+                        </div>
+                    </div>
 
+
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </section>
+                <section id="packaging" class="container packaging content-section text-center"></section>

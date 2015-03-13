@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   
   get 'profile/:id'  => 'users#show'
   
+  get 'profile/:id/edit' => 'users#edit'
+  
   get    'login'   => 'sessions#new'
   
   post   'login'   => 'sessions#create'
