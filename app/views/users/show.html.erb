@@ -1,9 +1,8 @@
  <% provide(:title, "#{@user.name}'s profile") %>
+  <% provide(:sectionclass, "text-center content-section") %>
+ <% provide(:divclass, "") %>
 
-<section id="ourTea" class="text-center content-section">
-    
-            <div class="container">
-        <div class="row">
+</div>
             <div class="col-lg-2 col-lg-offset-2">
             <%= gravatar_for @user %>
                 
