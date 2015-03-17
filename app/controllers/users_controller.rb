@@ -4,16 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if !logged_in?
-      redirect_to root_path
-    end
-    
-    if logged_in? && !get_current_user.nil?
-      @user = get_current_user
-    elsif logged_in?
-      @user = User.find(params[:id]) 
-    end
-  
+    direct_correct_user
   end
   
   def create
@@ -28,16 +19,19 @@ class UsersController < ApplicationController
     end
   end
   
+  def update
+    direct_correct_user
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
+  
   def edit
-    if !logged_in?
-      redirect_to root_path
-    end
-    
-    if logged_in? && !get_current_user.nil?
-      @user = get_current_user
-    elsif logged_in?
-      @user = User.find(params[:id]) 
-    end
+    direct_correct_user
   end
   
   private
@@ -46,5 +40,18 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
+    
+    def direct_correct_user
+      if !logged_in?
+      redirect_to login_path
+      end
+    
+      if logged_in? && !get_current_user.nil?
+        @user = get_current_user
+      elsif logged_in?
+        @user = User.find(params[:id]) 
+      end
+    end
+      
   
 end

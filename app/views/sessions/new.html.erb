@@ -1,7 +1,8 @@
 <% provide(:title, "Log in") %>
  <% provide(:sectionclass, "text-center content-section") %>
- <% provide(:divclass, "") %>
-
+ <% provide(:divclass, "none") %>
+</div>
+</div>
 </div>
 
 
@@ -34,15 +35,18 @@
             <%= '<span class="input__label-content input__label-content--kuro">Password</span>'.html_safe %>
         <% end %>
         </span>
+        
         <span class="input input--kuro">
         <%= f.label :remember_me, class: "checkbox inline" do %>
           <%= f.check_box :remember_me %> Remember Me
         <% end %>
         </span>
+        
         <span class="input input--kuro">
         <%= f.submit "Log in", class: "btn btn-danger btn-block" %>
-        <% end %>
         </span>
+        <% end %>
+        
 
   </div>
 </div>
@@ -50,10 +54,7 @@
   </div> 
   </div>
 
-  </div>
-
-
-  </div>
+  
 
   </section>
 
